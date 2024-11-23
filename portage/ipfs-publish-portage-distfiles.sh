@@ -30,6 +30,7 @@ else
     do
         ipfs add ${f} --progress=true --pin=false --to-files ${IPFS_DIR}/
     done
+fi
 
     # publish ipns
     key=$(ipfs key list | grep ${IPFS_PUB_KEY})
@@ -45,4 +46,3 @@ else
             ipfs name publish --key=${IPFS_PUB_KEY} /ipfs/${hash}
         fi
     fi
-fi
